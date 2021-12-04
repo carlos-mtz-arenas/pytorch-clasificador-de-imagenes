@@ -1,0 +1,14 @@
+__pycache__
+*.pyc
+*.log
+
+# IDEs
+.vscode
+.idea
+*.iml
+
+*.jpg
+
+# do not keep the actual models
+# since these might be re-generated
+models/*.h5

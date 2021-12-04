@@ -20,6 +20,8 @@ images = ['./images/validations/sitting.jpg',
 
 img_list = [Image.open(img) for img in images]
 
+# normalizer and transofrmers are the same as the ones
+# that we defined for the "test" phase during the training process
 normalizer = transforms.Normalize(
     [0.5, 0.5, 0.5],
     [0.5, 0.5, 0.5]
@@ -36,6 +38,7 @@ validation_batch = torch.stack(
 
 prediction_tensor = model(validation_batch)
 
+# transform the predictions to a probabilistic value
 prediction_probabilistic = F.softmax(
     prediction_tensor, dim=1).cpu().data.numpy()
 
